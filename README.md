@@ -43,6 +43,7 @@ services:
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
+      - /vol1/1000:/vol1/1000  # STRM 媒体库输出路径（直通宿主机存储目录，可按需修改）
     environment:
       - PORT=8004
       - AUTH_USER=admin
@@ -66,6 +67,7 @@ docker run -d \
   -p 8004:8004 \
   -v $(pwd)/data:/app/data \
   -v $(pwd)/logs:/app/logs \
+  -v /vol1/1000:/vol1/1000 \
   -e PORT=8004 \
   -e AUTH_USER=admin \
   -e AUTH_PASS=admin \
